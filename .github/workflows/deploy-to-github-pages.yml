@@ -7,7 +7,9 @@ name: Deploy DocFX Documentation
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+        id-token: write
+        contents: read
     environment:
         name: github-pages
         url: ${{steps.deployment.outputs.page_url}}

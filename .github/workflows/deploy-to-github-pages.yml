@@ -3,9 +3,11 @@ name: Deploy DocFX Documentation
   push:
     branches:
       - add-docs
+      - testy
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     environment:
         name: github-pages
         url: ${{steps.deployment.outputs.page_url}}
